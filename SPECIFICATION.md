@@ -7,7 +7,7 @@ Cybersecurity – Enterprise Security Operations
 Organizations face increasingly sophisticated cyber threats. While traditional SIEM systems provide detection, they often rely heavily on manual analyst intervention, which delays response times. This project proposes an advanced SIEM system that integrates automation (SOAR) to isolate compromised devices and enrich alerts with external threat intelligence APIs such as VirusTotal.
 
 ## Individual Scope
-The project is feasible for one developer because it focuses on:
+The project will be focusing on:
 - Simulated log ingestion from endpoints and servers
 - Rule-based and anomaly detection
 - Integration with external APIs (VirusTotal) for threat enrichment
