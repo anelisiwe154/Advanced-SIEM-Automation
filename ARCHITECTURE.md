@@ -31,6 +31,7 @@ Rel(system, logSource, "Ingests logs")
 Rel(system, virusTotal, "Queries for threat intelligence")
 ```
 
+```mermaid
 C4Container
 title Advanced SIEM - Container Diagram
 
@@ -51,6 +52,7 @@ Rel(api, orchestrator, "Triggers automated responses")
 Rel(api, virusTotal, "Fetches threat intelligence")
 ```
 
+```mermaid
 C4Component
 title Detection & Response API - Component Diagram
 
