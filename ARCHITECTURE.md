@@ -30,8 +30,7 @@ Rel(admin, system, "Monitors incidents via dashboard")
 Rel(system, logSource, "Ingests logs")
 Rel(system, virusTotal, "Queries for threat intelligence")
 
-### Container Diagram with System Boundary
-```mermaid
+
 C4Container
 title Advanced SIEM - Container Diagram
 
@@ -51,8 +50,7 @@ Rel(api, db, "Stores alerts and incidents")
 Rel(api, orchestrator, "Triggers automated responses")
 Rel(api, virusTotal, "Fetches threat intelligence")
 
-### Component Diagram with Container Boundary
-```mermaid
+
 C4Component
 title Detection & Response API - Component Diagram
 
