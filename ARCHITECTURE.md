@@ -29,7 +29,7 @@ System_Ext(virusTotal, "VirusTotal API", "Provides threat intelligence")
 Rel(admin, system, "Monitors incidents via dashboard")
 Rel(system, logSource, "Ingests logs")
 Rel(system, virusTotal, "Queries for threat intelligence")
-
+```
 
 C4Container
 title Advanced SIEM - Container Diagram
@@ -49,7 +49,7 @@ Rel(webApp, api, "Fetches alerts and incidents")
 Rel(api, db, "Stores alerts and incidents")
 Rel(api, orchestrator, "Triggers automated responses")
 Rel(api, virusTotal, "Fetches threat intelligence")
-
+```
 
 C4Component
 title Detection & Response API - Component Diagram
@@ -66,3 +66,4 @@ Rel(logIngest, ruleEngine, "Passes parsed logs")
 Rel(ruleEngine, threatEnrichment, "Enriches suspicious events")
 Rel(threatEnrichment, alertService, "Generates enriched alerts")
 Rel(alertService, responseEngine, "Triggers automated response")
+```
