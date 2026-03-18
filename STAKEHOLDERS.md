@@ -1,0 +1,10 @@
+# Stakeholder
+
+| Stakeholder        | Role                                               | Key Concerns                                   | Pain Points                                   | Success Metrics                               |
+|--------------------|----------------------------------------------------|------------------------------------------------|-----------------------------------------------|-----------------------------------------------|
+| Security Analyst   | Monitors alerts and incidents                      | Needs clear dashboards, reduced false positives | Too many manual investigations                 | 30% fewer false positives, faster triage       |
+| IT Administrator   | Manages infrastructure and deployments             | Wants easy deployment and system stability      | Complex setup processes                        | System deployable in < 1 hour                 |
+| Incident Response Team | Executes containment and recovery actions     | Needs automated response workflows              | Manual device isolation is slow                | 50% faster containment                        |
+| Developers         | Extend and maintain SIEM system                    | Require clear APIs and documentation            | Poorly documented integrations                 | API guide available, < 2 days onboarding       |
+| Enterprise Users   | Generate logs through daily activities             | Want minimal disruption during incidents        | Devices disconnected without communication     | Incident response with user notification       |
+| External Threat Intelligence Provider (VirusTotal) | Provides enrichment data | Needs reliable API calls                        | Overloaded API requests                        | 95% successful API call rate                   |
