@@ -18,3 +18,6 @@ A simulation of a modern SIEM system that combines log ingestion, anomaly detect
 ## Documentation
 - [System Specification](SPECIFICATION.md)
 - [Architecture & C4 Diagrams](ARCHITECTURE.md)
+- [stakeholders.md](stakeholders.md) – Stakeholder analysis table.
+- [requirements.md](requirements.md) – System Requirements Document (functional and non-functional requirements).
+- [reflection.md](reflection.md) – Reflection on balancing stakeholder needs.
