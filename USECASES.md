@@ -1,6 +1,6 @@
 ## 1. Use Case Diagram
 ```mermaid
-usecaseDiagram
+usecase
   actor SecurityAnalyst
   actor IncidentResponder
   actor ITAdmin
@@ -17,3 +17,4 @@ usecaseDiagram
   Developer --> (Maintain Detection Rules)
   EnterpriseUser --> (Receive Notifications)
   ThreatIntelAPI --> (Query Threat Intelligence API)
+  ```
