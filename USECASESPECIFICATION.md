@@ -96,3 +96,26 @@
   3. Logs action + notifies user.  
 - **Alternative Flows:**  
   - Response fails -> error logged. 
+
+
+  ## Test Cases
+
+### Functional Test Cases
+
+| Test Case ID | Use Case | Description | Steps | Expected Result |
+|--------------|----------|-------------|-------|-----------------|
+| TC-001 | Ingest Logs | Verify logs ingestion | Configure source, ingest | Logs stored |
+| TC-002 | Parse Logs | Verify parsing | Provide raw logs | Logs standardized |
+| TC-003 | Apply Detection Rules | Verify anomaly detection | Input anomaly | Alert flagged |
+| TC-004 | Query Threat Intel API | Verify enrichment | Submit suspicious hash | Enrichment returned |
+| TC-005 | Generate Alerts | Verify alert creation | Trigger anomaly | Alert created |
+| TC-006 | View Dashboard | Verify dashboard | Login, open dashboard | Alerts visible |
+| TC-007 | Acknowledge/Dismiss Alerts | Verify status update | Select alert, acknowledge | Status updated |
+| TC-008 | Trigger Automated Response | Verify automation | Approve workflow | Response executed |
+
+### Non‑Functional Test Cases
+
+| Test Case ID | Category | Description | Steps | Expected Result |
+|--------------|----------|-------------|-------|-----------------|
+| TC-009 | Performance | Response time | Query dataset of 1000 logs | Results ≤ 2s |
+| TC-010 | Security | API authentication | Call API without token | Request rejected |
