@@ -21,3 +21,4 @@ A simulation of a modern SIEM system that combines log ingestion, anomaly detect
 - [stakeholders.md](stakeholders.md) – Stakeholder analysis table.
 - [requirements.md](requirements.md) – System Requirements Document (functional and non-functional requirements).
 - [reflection.md](reflection.md) – Reflection on balancing stakeholder needs.
+- [Use Case Diagram](usecase.drawio.png)
