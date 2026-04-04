@@ -4,7 +4,7 @@
 
 | Story ID | User Story | Acceptance Criteria | Priority |
 |----------|------------|---------------------|----------|
-| US-001 | As a security analyst, I want to ingest logs from multiple sources so that I can monitor diverse systems. | Logs from at least 3 sources are ingested and stored successfully. | High |
+| US-001 | As a security analyst, I want to ingest logs from multiple sources so that I can monitor diverse systems. | Logs from at least 2 sources are ingested and stored successfully. | High |
 | US-002 | As a system admin, I want to parse logs into a standard format so that anomalies can be detected consistently. | Raw logs are normalized into a common schema. | High |
 | US-003 | As a security analyst, I want detection rules applied to logs so that suspicious activity is flagged. | Rules trigger alerts when anomalies are detected. | High |
 | US-004 | As a security analyst, I want to query threat intelligence APIs so that alerts are enriched with context. | API queries return enrichment data for suspicious hashes/IPs. | Medium |
@@ -45,11 +45,11 @@
 
 **Selected Stories:** US-001, US-002
 
-| Task ID | Task Description | Assigned To | Estimated Hours | Status |
+| Task ID | Task Description | Assigned To | Estimated days | Status |
 |---------|-----------------|-------------|-----------------|--------|
-| T-001 | Develop log ingestion API | Backend Dev | 8 | To Do |
-| T-002 | Configure database for log storage | DevOps | 6 | To Do |
-| T-003 | Implement log parsing module | Backend Dev | 6 | To Do |
-| T-004 | Test ingestion → parsing pipeline end-to-end | QA | 6 | To Do |
+| T-001 | Develop log ingestion API | Anelisiwe | 8 | To Do |
+| T-002 | Configure database for log storage | Anelisiwe | 6 | To Do |
+| T-003 | Implement log parsing module | Anelisiwe | 6 | To Do |
+| T-004 | Test ingestion → parsing pipeline end-to-end | Anelisiwe | 6 | To Do |
 
 ---
