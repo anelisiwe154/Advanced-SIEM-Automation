@@ -45,7 +45,7 @@
 
 **Selected Stories:** US-001, US-002
 
-| Task ID | Task Description | Assigned To | Estimated Hours | Status |
+| Task ID | Task Description | Assigned To | Estimated days | Status |
 |---------|-----------------|-------------|-----------------|--------|
 | T-001 | Develop log ingestion API | Anelisiwe | 8 | To Do |
 | T-002 | Configure database for log storage | Anelisiwe | 6 | To Do |
