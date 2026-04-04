@@ -25,6 +25,6 @@ A simulation of a modern SIEM system that combines log ingestion, anomaly detect
 
 ## Agile Planning 
 - [Agile Planning Document](AGILE_PLANNING.md)  
-- [GitHub Project Board](https://github.com/anelisiwe154/Advanced-SIEM-Automation/projects/1)  
+- [GitHub Project Board](https://github.com/users/anelisiwe154/projects/4)  
 - [Sprint 1 Milestone](https://github.com/anelisiwe154/Advanced-SIEM-Automation/milestone/1)  
 - [Issues (User Stories)](https://github.com/anelisiwe154/Advanced-SIEM-Automation/issues)
