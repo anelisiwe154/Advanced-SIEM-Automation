@@ -53,3 +53,20 @@
 | T-004 | Test ingestion → parsing pipeline end-to-end | Anelisiwe | 6 | To Do |
 
 ---
+
+## Reflection
+
+As the only stakeholder, I had to pretend to have competing goals, which was similar to the compromise and negotiation that actual Scrum teams have to deal with. While I fought for usability elements like dashboards and processes, I also wanted to give security aspects like encryption and efficiency first priority. I have to consider carefully what actually constitutes a minimal viable product in order to reconcile these viewpoints.
+
+Setting priorities was my first significant obstacle. I was able to distinguish between necessary and optional features by using the MoSCoW approach. At first, I intended to incorporate automated replies in Sprint 1, but I came to understand that ingesting and parsing are the real cornerstones of a SIEM. This demonstrated how simple it is to overcommit and how crucial it is to prioritize producing essential value.
+
+Another challenge was estimation. It was necessary to balance effort, risk, and complexity while assigning story points. For instance, log ingestion appeared simple, but I projected five points since combining numerous sources adds hidden complexity. Although crucial, parsing is more contained, therefore I gave it three points. Estimating was subjective when I worked alone, but it helped me understand how teams must compromise and adjust their estimations together.
+
+
+Another important lesson was to divide stories into tasks. Before I divided them down into specific tasks like Develop ingestion API or Implement parsing module, user stories felt abstract. Dependencies and sequencing were made clear, which is important for sprint planning. Additionally, it made the task measurable and tangible.
+
+Lastly, I thought about how Agile is iterative. Sprint 1 is a foundation, not the finished product. Workflows, automation, enrichment, and detection will be added in the following sprints. In line with the Agile manifesto's emphasis on adapting to change rather than adhering to a strict plan, this incremental approach lowers risk and delivers return early.
+
+To sum up, this part of the project taught me how to convert use cases and requirements into useful Agile artifacts. Even though I was the only stakeholder, the difficulties with prioritization, estimation, and alignment reflected real-world Agile dynamics. I had a greater understanding of the discipline needed to balance competing by modeling internal resistance. needs. Most importantly, I saw how Agile planning transforms abstract requirements into a roadmap for delivering a working system, one sprint at a time.
+
+---
