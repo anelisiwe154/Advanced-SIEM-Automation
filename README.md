@@ -28,3 +28,9 @@ A simulation of a modern SIEM system that combines log ingestion, anomaly detect
 - [GitHub Project Board](https://github.com/users/anelisiwe154/projects/4)  
 - [Sprint 1 Milestone](https://github.com/anelisiwe154/Advanced-SIEM-Automation/milestone/1)  
 - [Issues (User Stories)](https://github.com/anelisiwe154/Advanced-SIEM-Automation/issues)
+
+## Assignment 7
+- [Comparison of Kanban, Team Planning, Iterative Development, with justification for chosen template and reflection](TEMPLATE_ANALYSIS.md)
+- [Template screenshots](screenshoots)
+- [kaban expanation](KANBAN_EXPLANATION.md)
+
