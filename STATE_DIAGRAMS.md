@@ -1,10 +1,14 @@
 # Log Event
+```mermaid
 stateDiagram-v2
     [*] --> Ingested
     Ingested --> Parsed: Parser applies rules
     Parsed --> Stored: Save to database
     Stored --> Archived: Retention period expired
     Archived --> [*]
+
+```
+
 Explanation:
 
 Key States: Ingested, Parsed, Stored, Archived.
@@ -14,7 +18,7 @@ Transitions: Logs are ingested, parsed into a standardized format, stored, and e
 Traceability: FR‑1 (ingest logs), FR‑2 (parse logs), FR‑6 (store logs).
 
 # Detection Rule
-
+```mermaid
 stateDiagram-v2
     [*] --> Draft
     Draft --> Active: Approved by admin
@@ -22,6 +26,9 @@ stateDiagram-v2
     Disabled --> Active: Re-enabled
     Active --> Retired: Outdated rule
     Retired --> [*]
+
+```
+
 Explanation:
 
 Key States: Draft, Active, Disabled, Retired.
@@ -31,7 +38,7 @@ Transitions: Rules are drafted, activated, disabled, or retired.
 Traceability: FR‑3 (apply detection rules).
 
 # Alert
-
+```mermaid
 stateDiagram-v2
     [*] --> New
     New --> Investigating: Analyst reviews
@@ -41,6 +48,9 @@ stateDiagram-v2
     Escalated --> Resolved: Incident resolved
     Resolved --> Closed: Manager approves closure
     Closed --> [*]
+
+```
+
 Explanation:
 
 Key States: New, Investigating, Acknowledged, Dismissed, Escalated, Resolved, Closed.
@@ -50,7 +60,7 @@ Transitions: Alerts are generated, reviewed, acknowledged/dismissed, escalated i
 Traceability: FR‑5 (generate alerts), FR‑7 (dashboard for analysts), FR‑8 (acknowledge/dismiss alerts).
 
 # Incident
-
+```mermaid
 stateDiagram-v2
     [*] --> Open
     Open --> Assigned: Analyst takes ownership
@@ -58,6 +68,9 @@ stateDiagram-v2
     InProgress --> Resolved: Root cause fixed
     Resolved --> Closed: Manager validates resolution
     Closed --> [*]
+
+```
+
 Explanation:
 
 Key States: Open, Assigned, InProgress, Resolved, Closed.
@@ -67,13 +80,15 @@ Transitions: Incidents move through assignment, investigation, resolution, and c
 Traceability: FR‑9 (trigger automated response workflows).
 
 # VirusTotal Query
-
+```mermaid
 stateDiagram-v2
     [*] --> Pending
     Pending --> Submitted: API request sent
     Submitted --> Enriched: Threat data received
     Enriched --> Stored: Save enrichment results
     Stored --> [*]
+
+```
 Explanation:
 
 Key States: Pending, Submitted, Enriched, Stored.
@@ -83,13 +98,15 @@ Transitions: Queries are submitted, enriched with threat intelligence, and store
 Traceability: FR‑4 (query VirusTotal API).
 
 # Dashboard View
-
+```mermaid
 stateDiagram-v2
     [*] --> Loading
     Loading --> Displaying: Alerts retrieved
     Displaying --> Updated: Analyst refreshes
     Updated --> Displaying
     Displaying --> [*]
+
+```
 Explanation:
 
 Key States: Loading, Displaying, Updated.
@@ -99,13 +116,16 @@ Transitions: Dashboard loads alerts, displays them, and updates when refreshed.
 Traceability: FR‑7 (provide dashboard for analysts).
 
 # Automated Response Workflow
-
+```mermaid
 stateDiagram-v2
     [*] --> Triggered
     Triggered --> Executing: Response actions running
     Executing --> Completed: Actions finished
     Completed --> Logged: Audit entry created
     Logged --> [*]
+
+```
+
 Explanation:
 
 Key States: Triggered, Executing, Completed, Logged.
