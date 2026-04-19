@@ -36,6 +36,7 @@ A simulation of a modern SIEM system that combines log ingestion, anomaly detect
 
 ## Assignment 8: Object State Modeling and Activity Workflow Modeling
 - [Activity Diagrams](ACTIVITY_DIAGRAMS.md)
-- [State Diagrams](STATE_DIAGRAMS)
+- [State Diagrams](STATE_DIAGRAMS.md)
+- [Assignment 8 Reflection](REFLECTION.md)
 
 
