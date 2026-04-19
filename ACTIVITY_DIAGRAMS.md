@@ -18,8 +18,6 @@ Stakeholder Concern: Ensures only authorized analysts can access sensitive alert
 
 Traceability: FR-7 (provide a dashboard for analysts to view alerts).
 
-
-
 # Log Ingestion
 ```mermaid
 flowchart TD
@@ -28,7 +26,7 @@ flowchart TD
     NormalizeFormat --> StoreLogs
     StoreLogs --> End
 
-    ```
+ ```
 Explanation:
 
 Workflow: Logs collected, normalized, stored.
