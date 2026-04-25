@@ -16,7 +16,7 @@
 - An Alert is generated when a Rule condition matches a LogEvent.
 - Alerts can be acknowledged or dismissed only by Analysts.
 - A Rule is defined in three steps:
- - Metadata (name, description, data source, detection technology, event type, remediation notes).
+ - General (name, description, data source, detection technology, event type, remediation notes).
  - Condition (filters, aggregation, grouping).
  - Action (severity, category, techniques, tactics, action, tag).
 - An Incident is escalated from an Alert and may trigger one or more ResponseWorkflows.
