@@ -39,4 +39,12 @@ A simulation of a modern SIEM system that combines log ingestion, anomaly detect
 - [State Diagrams](STATE_DIAGRAMS.md)
 - [Assignment 8 Reflection](REFLECTION.md)
 
+## Assignment 9: Domain Modeling and Class Diagram Development
+- [Domain Model](DOMAIN_MODEL.md)  
+Contains the key entities (User, Alert, Rule, Incident, ResponseWorkflow, Report), their attributes, methods, relationships, and business rules.
+- [Class Diagram](CLASS_DIAGRAM.md)  
+Mermaid.js UML diagram showing classes, attributes, methods, and relationships with multiplicity.
+- [Assignment 9: Reflection](REFLECTION.md)  
+
+
 
