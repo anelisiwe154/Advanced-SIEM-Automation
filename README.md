@@ -47,4 +47,76 @@ Mermaid.js UML diagram showing classes, attributes, methods, and relationships w
 - [Assignment 9: Reflection](REFLECTION.md)  
 
 
+# Assignment 10 : From Class Diagrams to Code with All Creational Patterns
+
+## Overview
+This project implements six creational design patterns in Python as part of an Advanced SIEM (Security Information and Event Management) system. The goal is to demonstrate design pattern usage, reproducibility through testing, and professional repository organization.
+
+## Implemented Creational Patterns
+- Factory: AlertFactory, SIEMFactory – creates alerts and incidents consistently.
+- Builder: RuleBuilder – constructs complex Rule objects step by step.
+- Prototype: AlertPrototype – clones existing alerts for reuse.
+- Singleton: DatabaseConnection – ensures only one database connection instance.
+- Additional Supporting Classes: Alert, Incident, Rule, User, ResponseWorkflow.
+
+## Design Choices & Rationales
+- Factory: Used to abstract alert/incident creation, ensuring consistent attributes across Cloud and OnPrem SIEM.
+- Builder: Chosen for flexibility in constructing rules with metadata, conditions, and actions.
+- Prototype: Enables cloning of alerts for rapid duplication in incident response scenarios.
+- Singleton: Prevents multiple database connections, ensuring thread safety and resource efficiency.
+- Traceability: Each pattern builds on prior assignments (state diagrams, domain models, class diagrams).
+
+## Testing & Coverage
+- Unit tests located in `/tests`.
+- Run tests:
+  ```bash
+  pytest -v
+
+   - [Assignment 10 : Reflection](REFLECTION.md)
+   - [Pytest run](ptest run.png)
+   - [Covrage report](covrage repory.png)
+
+
+## Language Choice & Design Decisions
+
+This project was implemented in Python because:
+- It provides clear syntax and readability, making UML-to-code translation straight forward.
+- Strong support for object-oriented programming (classes, inheritance, composition).
+- Excellent ecosystem for testing ('pytest') and coverage reporting.
+
+### UML to Code Mapping
+- Each class from the Mermaid.js UML diagram was translated into a Python class in '/src'.
+- Attributes were implemented as instance variables (with '_' prefix for private fields where appropriate).
+- Methods from the UML diagram were implemented directly (e.g., 'evaluate()', 'execute_actions()' in 'Rule').
+- Relationships:
+- Factory classes create 'Alert' and 'Incident' objects (composition).
+-Builder constructs 'Rule' objects step by step.
+- Singleton ensures only one 'DatabaseConnection' instance.
+- Prototype clones 'Alert' objects for reuse.
+
+This ensures traceability between UML diagrams (Assignment 9) and the Python implementation (Assignment 10).
+
+## Creational Pattern Rationales
+
+-Simple Factory (AlertFactory)  
+  Used to centralize alert creation. This ensures consistent initialization of alerts without exposing object construction details.
+
+- Factory Method (Processor classes)
+  Applied to delegate instantiation logic to subclasses (RuleProcessor, IncidentProcessor). This supports extensibility when new processors are added.
+
+-Abstract Factory (SIEMFactory)  
+  Implemented to create families of related objects for different environments (Cloud vs OnPrem). This enforces environment‑specific consistency.
+
+-Builder (RuleBuilder) 
+  Chosen to construct complex Rule objects step by step. Rules often have optional metadata, conditions, and actions, making Builder ideal.
+
+-Prototype (AlertPrototype) 
+  Enables cloning of preconfigured alerts to avoid costly reinitialization. Useful in incident response where alerts need to be duplicated quickly.
+
+-Singleton (DatabaseConnection) 
+  Ensures only one database connection exists globally, preventing resource conflicts and maintaining thread safety.
+
+
+
+
 
