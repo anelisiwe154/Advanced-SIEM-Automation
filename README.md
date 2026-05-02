@@ -49,6 +49,10 @@ Mermaid.js UML diagram showing classes, attributes, methods, and relationships w
 
 # Assignment 10 : From Class Diagrams to Code with All Creational Patterns
 
+- [Assignment 10 : Reflection](REFLECTION.md)
+- [Pytest run](ptest run.png)
+- [Covrage report](covrage repory.png)
+
 ## Overview
 This project implements six creational design patterns in Python as part of an Advanced SIEM (Security Information and Event Management) system. The goal is to demonstrate design pattern usage, reproducibility through testing, and professional repository organization.
 
@@ -72,9 +76,6 @@ This project implements six creational design patterns in Python as part of an A
   ```bash
   pytest -v
 
-   - [Assignment 10 : Reflection](REFLECTION.md)
-   - [Pytest run](ptest run.png)
-   - [Covrage report](covrage repory.png)
 
 
 ## Language Choice & Design Decisions
