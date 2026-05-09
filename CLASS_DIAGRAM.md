@@ -32,19 +32,16 @@ class Alert {
 }
 
 class Rule {
-  %% Step 1: Metadata
   -ruleName: String
   -description: String
   -dataSource: String
   -detectionTechnology: String
   -eventType: String
   -remediationNotes: String
-  %% Step 2: Condition
   -conditionName: String
   -filters: String
   -aggregate: String
   -groupBy: String
-  %% Step 3: Action
   -severity: String
   -category: String
   -techniques: String
@@ -88,6 +85,49 @@ Alert "1" --> "0..1" Incident : escalates
 Incident "1" --> "0..*" ResponseWorkflow : triggers
 Rule "1" --> "0..*" Alert : defines
 Incident "0..*" --> "0..*" Report : summarizedIn
+
+%% =========================
+%% Repository Interfaces
+%% =========================
+class Repository {
+  +save(entity)
+  +find_by_id(id)
+  +find_all()
+  +delete(id)
+}
+
+class AlertRepository
+class IncidentRepository
+class UserRepository
+class RuleRepository
+
+Repository <|-- AlertRepository
+Repository <|-- IncidentRepository
+Repository <|-- UserRepository
+Repository <|-- RuleRepository
+
+%% =========================
+%% In-Memory Implementations
+%% =========================
+class InMemoryAlertRepository
+class InMemoryIncidentRepository
+class InMemoryUserRepository
+class InMemoryRuleRepository
+
+AlertRepository <|-- InMemoryAlertRepository
+IncidentRepository <|-- InMemoryIncidentRepository
+UserRepository <|-- InMemoryUserRepository
+RuleRepository <|-- InMemoryRuleRepository
+
+%% =========================
+%% Future Stubs
+%% =========================
+class DatabaseAlertRepository
+class FileSystemAlertRepository
+
+AlertRepository <|-- DatabaseAlertRepository
+AlertRepository <|-- FileSystemAlertRepository
+
 
 ``` 
 
