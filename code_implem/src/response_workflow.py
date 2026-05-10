@@ -12,5 +12,6 @@ class ResponseWorkflow:
         self.status = "Executed"
         return f"Workflow {self.workflow_id} executed: {self.actions}"
 
-    def log_action(self):
-        return f"Workflow {self.workflow_id} logged."
+    def log_action(self, action):   # <-- add parameter
+        self.actions.append(action)
+        return f"Workflow {self.workflow_id} logged action: {action}"
