@@ -117,7 +117,22 @@ This ensures traceability between UML diagrams (Assignment 9) and the Python imp
 -Singleton (DatabaseConnection) 
   Ensures only one database connection exists globally, preventing resource conflicts and maintaining thread safety.
 
+## Assignment 11 : Implementing a Persistence Repository Layer
 
+- Repository Interfaces:
+  - repository.py
+  - alert_repository.py, incident_repository.py, rule_repository.py, user_repository.py
+- In-Memory Implementation:
+  - inmemory_alert_repository.py, inmemory_incident_repository.py, inmemory_rule_repository.py, inmemory_user_repository.py
+- Abstraction Mechanism:
+  - repository_factory.py
+- Future-Proofing:
+  - Stubs: database_alert_repository.py, filesystem_alert_repository.py
+  - Updated class diagram included in README
+- Tests:
+  - test_repository.py, test_repository_factory.py, test_inmemory_repositories.py, test_user.py
+
+  - [Assignment 11 : Reflection](REFLECTION.md)
 
 
 
