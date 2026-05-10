@@ -39,3 +39,40 @@ The class diagram aligns closely with earlier assignments. In Assignment 4 (Requ
 Several trade‑offs were necessary to keep the design practical. Inheritance was simplified by modeling user roles as attributes rather than creating subclasses for Analyst, Admin, or Manager. This reduced complexity while maintaining flexibility. Similarly, workflows were modeled as reusable aggregations rather than tightly coupled compositions. These trade‑offs illustrate the importance of pragmatism in design,  sometimes simplicity and clarity outweigh theoretical completeness.
 
 The key lessons learned include the importance of balancing granularity with readability, ensuring traceability to requirements and use cases, and recognizing the complementary perspectives offered by different modeling techniques. State diagrams emphasize object lifecycles, activity diagrams highlight workflows, and class diagrams capture structural relationships. Together, they provide a holistic view of system behavior.
+
+
+
+# Assignment 10 : Reflection
+
+## Critical Analysis
+Implementing the six creational patterns in the SIEM project highlighted the importance of design consistency and reproducibility. Each pattern was chosen to solve a specific problem:
+- Factory simplified object creation by abstracting alert and incident instantiation.
+- Builder provided flexibility in constructing complex `Rule` objects with metadata, conditions, and actions.
+- Prototype enabled cloning of alerts, supporting rapid duplication in incident response workflows.
+- Singleton ensured a single database connection, preventing resource conflicts.
+- SIEMFactory demonstrated how Cloud and OnPrem environments can be encapsulated with consistent creation logic.
+
+The biggest challenge was aligning class attributes with test expectations. For example, the Rule class originally used name, but tests required rule_name. This mismatch emphasized the need for traceability between UML diagrams, code, and test cases.
+
+## Challenges Faced
+- Import errors and module structure: Early failures occurred due to missing imports (ABC, Rule). These were resolved by carefully organizing src/ and creational_patterns/ directories.
+- Duplicate keyword arguments: Factories initially passed duplicate parameters (category, type), causing runtime errors. Overriding `kwargs` safely fixed this.
+- Coverage gaps: While core patterns achieved high coverage, supporting classes (response_workflow.py, user.py) remain under‑tested.
+
+## Lessons Learned
+- Consistency matters: Attribute naming must match across UML, implementation, and tests.
+- Testing drives design: Pytest failures revealed subtle design flaws, guiding refactoring.
+- Traceability improves quality: Linking commits to issues and maintaining a CHANGELOG ensured reproducibility and accountability.
+- Coverage is a diagnostic tool: It highlighted areas of the system not yet validated, guiding future improvements.
+
+## Alignment with Prior Work
+This assignment builds directly on Assignments 8 and 9:
+- From state diagrams and activity diagrams (Assignment 8), the transition logic informed how alerts and incidents should be modeled.
+- From domain models and class diagrams (Assignment 9), the structural relationships guided the implementation of factories and builders.
+- Assignment 10 extends these foundations by implementing creational patterns in code, validating them with tests, and documenting progress via GitHub.
+
+Assignment 10 reinforced the value of design patterns in building scalable SIEM systems. The combination of structured implementation, automated testing, and GitHub project management provided a professional workflow that mirrors industry practice. Future work will focus on expanding test coverage and integrating CI/CD pipelines to further strengthen reproducibility.
+
+# Assignment 11 : Reflection
+
+In designing the repository layer for the SIEM project, I deliberately chose the Factory Pattern over Dependency Injection because it provides a lightweight and centralized mechanism for instantiating repositories without requiring a complex DI framework. This decision ensures that services remain decoupled from storage specifics, while still allowing flexibility to add new backends such as database or filesystem repositories in the future. The use of interfaces enforces consistent contracts across all entities, and the in‑memory implementations enabled fast unit testing and validation of CRUD operations. By introducing stub classes for database and filesystem repositories, the system demonstrates clear extensibility and future‑proofing, showing how new storage options can be integrated with minimal changes. Overall, this architecture balances simplicity, maintainability, and scalability, ensuring that the SIEM domain model remains robust and adaptable to evolving requirements.

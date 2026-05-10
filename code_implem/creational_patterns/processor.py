@@ -1,5 +1,7 @@
 
 from abc import ABC, abstractmethod
+from code_implem.src.rule import Rule
+from code_implem.src.incident import Incident
 
 class Processor(ABC):
     @abstractmethod

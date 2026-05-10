@@ -1,5 +1,6 @@
 
-from src.alert import Alert
+from code_implem.src.alert import Alert
+
 
 class AlertFactory:
     @staticmethod

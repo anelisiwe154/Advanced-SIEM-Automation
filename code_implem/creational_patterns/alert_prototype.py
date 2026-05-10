@@ -1,6 +1,6 @@
 
 import copy
-from src.alert import Alert
+from code_implem.src.alert import Alert
 
 class AlertPrototype:
     def __init__(self):
