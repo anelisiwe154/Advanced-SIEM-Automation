@@ -128,7 +128,7 @@ This ensures traceability between UML diagrams (Assignment 9) and the Python imp
   - repository_factory.py
 - Future-Proofing:
   - Stubs: database_alert_repository.py, filesystem_alert_repository.py
-  - Updated class diagram included in README
+  - Updated : [Class Diagram](CLASS_DIAGRAM.md) 
 - Tests:
   - test_repository.py, test_repository_factory.py, test_inmemory_repositories.py, test_user.py
 
