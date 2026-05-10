@@ -32,19 +32,16 @@ class Alert {
 }
 
 class Rule {
-  %% Step 1: Metadata
   -ruleName: String
   -description: String
   -dataSource: String
   -detectionTechnology: String
   -eventType: String
   -remediationNotes: String
-  %% Step 2: Condition
   -conditionName: String
   -filters: String
   -aggregate: String
   -groupBy: String
-  %% Step 3: Action
   -severity: String
   -category: String
   -techniques: String
@@ -89,13 +86,60 @@ Incident "1" --> "0..*" ResponseWorkflow : triggers
 Rule "1" --> "0..*" Alert : defines
 Incident "0..*" --> "0..*" Report : summarizedIn
 
+%% =========================
+%% Repository Interfaces
+%% =========================
+class Repository {
+  +save(entity)
+  +find_by_id(id)
+  +find_all()
+  +delete(id)
+}
+
+class AlertRepository
+class IncidentRepository
+class UserRepository
+class RuleRepository
+
+Repository <|-- AlertRepository
+Repository <|-- IncidentRepository
+Repository <|-- UserRepository
+Repository <|-- RuleRepository
+
+%% =========================
+%% In-Memory Implementations
+%% =========================
+class InMemoryAlertRepository
+class InMemoryIncidentRepository
+class InMemoryUserRepository
+class InMemoryRuleRepository
+
+AlertRepository <|-- InMemoryAlertRepository
+IncidentRepository <|-- InMemoryIncidentRepository
+UserRepository <|-- InMemoryUserRepository
+RuleRepository <|-- InMemoryRuleRepository
+
+%% =========================
+%% Future Stubs
+%% =========================
+class DatabaseAlertRepository
+class FileSystemAlertRepository
+
+AlertRepository <|-- DatabaseAlertRepository
+AlertRepository <|-- FileSystemAlertRepository
+
+
 ``` 
 
 ### Design Decisions
-- User simplified to only core authentication and organisational attributes.  
-- Alert expanded with detailed incident metadata (severity, tactics, reporting IP, etc.).  
-- Rule modeled in three logical steps (General, condition, action) but kept in one class for readability.  
-- Incident escalates from Alerts and triggers ResponseWorkflows.  
-- Reports summarize Incidents for audit and compliance.  
+- User remains simplified to core authentication and organisational attributes, ensuring clarity and avoiding      unnecessary complexity.
+- Alert is expanded with detailed incident metadata (severity, tactics, reporting IP, etc.) to support richer detection and escalation workflows.
+- Rule is modeled in three logical steps (metadata, condition, action) but kept in one class for readability and easier maintenance.
+- Incident escalates from Alerts and triggers ResponseWorkflows, reflecting the operational flow of SIEM systems.
+- Reports summarize Incidents for audit and compliance, ensuring traceability.
+- Repository Interfaces abstract CRUD operations for each entity, enforcing consistent contracts and decoupling domain logic from storage.
+- In-Memory Implementations provide working HashMap‑based storage for testing and current functionality.
+- Future Stubs (Database, FileSystem) are included to demonstrate extensibility and future-proofing, raising NotImplementedError until implemented.
+- This layered design balances simplicity, maintainability, and scalability, ensuring the SIEM domain model can evolve with new storage backends while remaining testable and robust. 
 
 ---

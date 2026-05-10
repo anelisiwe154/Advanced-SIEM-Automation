@@ -1,7 +1,7 @@
 
 from abc import ABC, abstractmethod
-from src.alert import Alert
-from src.incident import Incident
+from code_implem.src.alert import Alert
+from code_implem.src.incident import Incident
 
 class SIEMFactory(ABC):
     @abstractmethod

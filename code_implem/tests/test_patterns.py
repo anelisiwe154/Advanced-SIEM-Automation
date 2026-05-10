@@ -1,11 +1,16 @@
 import pytest
-from creational_patterns.alert_factory import AlertFactory
-from creational_patterns.processor import RuleProcessor, IncidentProcessor
-from creational_patterns.siem_factory import CloudSIEMFactory, OnPremSIEMFactory
-from creational_patterns.rule_builder import RuleBuilder
-from creational_patterns.alert_prototype import AlertPrototype
-from creational_patterns.database_connection import DatabaseConnection
-from src.alert import Alert
+
+from code_implem.creational_patterns.alert_factory import AlertFactory
+from code_implem.creational_patterns.processor import RuleProcessor, IncidentProcessor
+from code_implem.creational_patterns.siem_factory import CloudSIEMFactory, OnPremSIEMFactory
+from code_implem.creational_patterns.rule_builder import RuleBuilder
+from code_implem.creational_patterns.alert_prototype import AlertPrototype
+from code_implem.creational_patterns.database_connection import DatabaseConnection
+
+from code_implem.src.alert import Alert
+from code_implem.src.incident import Incident
+from code_implem.src.rule import Rule
+from code_implem.src.user import User
 
 
 

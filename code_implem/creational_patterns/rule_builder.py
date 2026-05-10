@@ -1,5 +1,5 @@
 
-from src.rule import Rule
+from code_implem.src.rule import Rule
 
 class RuleBuilder:
     def __init__(self):
