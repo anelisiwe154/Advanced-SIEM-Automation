@@ -26,29 +26,29 @@
 - Partial coverage in incident.py and alert_factory.py.
 - Future improvement: add more edge case tests and CI/CD integration.
 
-
-
 ### Features
-- **Incidents API** (GET, Escalate, Acknowledge)  
+- Incidents API (GET, Escalate, Acknowledge)  
   - Implemented in `api/incidents.py`  
   - Closes #11  
 
-- **Alerts API** (GET, Acknowledge, Dismiss)  
+- Alerts API (GET, Acknowledge, Dismiss)  
   - Implemented in `api/alerts.py`  
   - Closes #14, #16  
 
-- **Rules API** (GET, Add Rule)  
+- Rules API (GET, Add Rule)  
   - Implemented in `api/rules.py`  
   - Closes #12  
 
-- **Users API** (GET, Register, Deactivate)  
+- Users API (GET, Register, Deactivate)  
   - Implemented in `api/users.py`  
   - Closes #37, #38  
 
 ### Documentation
-- Added **OpenAPI/Swagger UI** (`/docs`) and **ReDoc** (`/redoc`)  
-- Exported OpenAPI JSON → `docs/openapi.json`  
-- Screenshot evidence → `docs/swagger_ui.png`  
+- Added OpenAPI/Swagger UI (`/docs`)  
+- Exported OpenAPI JSON -> `docs/openapi.json`  
+- Screenshot evidence -> `docs/swagger1_ui.png`  
+- Screenshot evidence -> `docs/swagger2_ui.png` 
+- [Sprint board update.png](screenshoots)
 
 ### Fixes & Improvements
 - Fixed validation errors on Rule creation (422 response for missing fields)  
@@ -56,4 +56,3 @@
 
 ---
 
-Closes #11, #12, #14, #16, #37, #38
