@@ -134,5 +134,12 @@ This ensures traceability between UML diagrams (Assignment 9) and the Python imp
 
   - [Assignment 11 : Reflection](REFLECTION.md)
 
+  ## Assignment 11 : Service Layer and REST API Implementation
+  - [Sprint board update.png](screenshoots)
+  - [Swagger UI Screenshots](docs)
+  - [CHANGELOG.md]CHANGELOG.md)
+  
+
+
 
 
