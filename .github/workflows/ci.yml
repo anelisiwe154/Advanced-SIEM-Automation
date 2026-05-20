@@ -22,10 +22,14 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # Install core dependencies directly
-          pip install fastapi uvicorn pydantic
-          # Install testing dependencies
+          # Core dependencies
+          pip install fastapi uvicorn pydantic httpx
+          # Testing dependencies
           pip install pytest pytest-cov
+
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
 
       - name: Run tests
         run: pytest --cov=code_implem --cov-report=xml
+
