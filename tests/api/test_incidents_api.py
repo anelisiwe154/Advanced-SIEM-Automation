@@ -1,7 +1,8 @@
 # /tests/api/test_incidents_api.py
 import pytest
 from fastapi.testclient import TestClient
-from api.app import app
+from ...api.app import app   
+client = TestClient(app)
 
 client = TestClient(app)
 
