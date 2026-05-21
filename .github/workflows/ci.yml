@@ -2,7 +2,7 @@ name: CI Pipeline
 
 on:
   push:
-    branches: ["main", "specification"]   
+    branches: ["main", "specification"]
   pull_request:
     branches: ["main"]
 
@@ -29,10 +29,10 @@ jobs:
 
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PWD:$PWD/api:$PWD/code_implem" >> $GITHUB_ENV
-        
 
       - name: Run tests
-        run: pytest --cov=code_implem --cov-report=xml
+        run: python -m pytest --cov=code_implem --cov-report=xml
+
 
 
 
