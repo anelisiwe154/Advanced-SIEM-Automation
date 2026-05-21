@@ -10,7 +10,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # future-proof against Node.js 20 deprecation
 
     steps:
       - name: Checkout code
@@ -31,6 +31,7 @@ jobs:
 
       - name: Run tests
         run: python -m pytest --cov=code_implem --cov-report=xml
+
 
 
 
