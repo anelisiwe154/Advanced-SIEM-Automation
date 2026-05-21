@@ -1,9 +1,8 @@
 name: CI Pipeline
 
-
 on:
   push:
-    branches: ["*"]
+    branches: ["main", "specification"]  
   pull_request:
     branches: ["main"]
 
@@ -29,9 +28,11 @@ jobs:
           pip install pytest pytest-cov
 
       - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
+        run: echo "PYTHONPATH=$PWD:$PWD/api:$PWD/code_implem" >> $GITHUB_ENV
+        
 
       - name: Run tests
         run: pytest --cov=code_implem --cov-report=xml
+
 
 
