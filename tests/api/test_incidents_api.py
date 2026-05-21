@@ -1,10 +1,9 @@
-# /tests/api/test_incidents_api.py
 import pytest
 from fastapi.testclient import TestClient
-from ...api.app import app   
-client = TestClient(app)
+from ...api.app import app   # relative import
 
 client = TestClient(app)
+
 
 def test_get_all_incidents_empty():
     response = client.get("/api/incidents/")
