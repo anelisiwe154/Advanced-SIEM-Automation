@@ -1,8 +1,9 @@
 import pytest
 from fastapi.testclient import TestClient
-from ...api.app import app   # relative import
+from api.app import app   # absolute import
 
 client = TestClient(app)
+
 
 
 def test_get_all_incidents_empty():
