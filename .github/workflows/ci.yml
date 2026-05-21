@@ -27,11 +27,9 @@ jobs:
           # Testing dependencies
           pip install pytest pytest-cov
 
-      - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=$PWD:$PWD/api:$PWD/code_implem" >> $GITHUB_ENV
-
       - name: Run tests
-        run: python -m pytest --cov=code_implem --cov-report=xml
+        run: PYTHONPATH=$PWD python -m pytest --cov=code_implem --cov-report=xml
+
 
 
 
