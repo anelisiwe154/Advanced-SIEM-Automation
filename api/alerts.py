@@ -6,9 +6,16 @@ from api.schemas import AlertSchema
 router = APIRouter(prefix="/api/alerts", tags=["Alerts"])
 alert_service = AlertService(InMemoryAlertRepository())
 
-@router.get("/", response_model=list[AlertSchema])
+@router.get("/")
 def get_all_alerts():
-    return alert_service.alert_repo.find_all()
+    return [
+        {
+            "id": a.id,
+            "description": a.description,
+            "is_acknowledged": a.is_acknowledged,
+        }
+        for a in alert_service.get_alerts()
+    ]
 
 @router.post("/{alert_id}/acknowledge", response_model=AlertSchema)
 def acknowledge_alert(alert_id: str):
@@ -23,4 +30,9 @@ def dismiss_alert(alert_id: str):
         return alert_service.dismiss_alert(alert_id)
     except AlertNotFoundException:
         raise HTTPException(status_code=404, detail="Alert not found")
+    
+
+
+
+
 

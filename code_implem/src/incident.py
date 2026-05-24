@@ -1,17 +1,17 @@
 class Incident:
-    def __init__(self, incident_id, type, status, resolution_details=None):
-        self.incident_id = incident_id
-        self.type = type
-        self.status = status
-        self.resolution_details = resolution_details
+    def __init__(self, id: str, description: str):
+        self.id = id
+        self.description = description
+        self.incident_id = id
+        self.incident_title = description
+        self.is_escalated = False
+        self.is_acknowledged = False
 
-    def assign(self, analyst):
-        return f"Incident {self.incident_id} assigned to {analyst}."
+    def escalate(self):
+        self.is_escalated = True
+        return f"Incident {self.id} escalated."
 
-    def investigate(self):
-        return f"Incident {self.incident_id} under investigation."
+    def acknowledge(self):
+        self.is_acknowledged = True
+        return f"Incident {self.id} acknowledged."
 
-    def resolve(self, details):
-        self.resolution_details = details
-        self.status = "Resolved"
-        return f"Incident {self.incident_id} resolved: {details}"

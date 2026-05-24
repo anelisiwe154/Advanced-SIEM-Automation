@@ -1,8 +1,9 @@
 # /services/alert_service.py
-from code_implem.repositories.alert_repository import AlertRepository
 from code_implem.src.alert import Alert
+from code_implem.repositories.alert_repository import AlertRepository
 
 class AlertNotFoundException(Exception):
+    """Raised when an alert cannot be found in the repository."""
     pass
 
 class AlertService:
@@ -13,14 +14,19 @@ class AlertService:
         alert = self.alert_repo.find_by_id(alert_id)
         if not alert:
             raise AlertNotFoundException(alert_id)
-
         alert.acknowledge()
-        return self.alert_repo.save(alert)
+        self.alert_repo.save(alert)
+        return alert
 
     def dismiss_alert(self, alert_id: str) -> Alert:
         alert = self.alert_repo.find_by_id(alert_id)
         if not alert:
             raise AlertNotFoundException(alert_id)
-
         alert.dismiss()
-        return self.alert_repo.save(alert)
+        self.alert_repo.save(alert)
+        return alert
+    
+    def get_alerts(self) -> list[Alert]:
+        return self.alert_repo.find_all()
+
+

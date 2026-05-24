@@ -6,14 +6,21 @@ class InMemoryUserRepository(UserRepository):
         self._storage: dict[str, User] = {}
 
     def save(self, entity: User) -> None:
-        self._storage[entity.user_id] = entity
+        self._storage[entity.id] = entity
 
-    def find_by_id(self, user_id: str) -> User | None:
-        return self._storage.get(user_id)
+    def find_by_id(self, id: str) -> User | None:
+        return self._storage.get(id)
 
     def find_all(self) -> list[User]:
         return list(self._storage.values())
 
-    def delete(self, user_id: str) -> None:
-        self._storage.pop(user_id, None)
+    def delete(self, id: str) -> None:
+        self._storage.pop(id, None)
+
+    def find_by_name(self, name: str) -> User | None:
+        for user in self._storage.values():
+            if user.name == name:
+                return user
+        return None
+
 

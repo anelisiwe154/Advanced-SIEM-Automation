@@ -24,3 +24,7 @@ def deactivate_user(user_id: str):
         return user_service.deactivate_user(user_id)
     except UserNotFoundException:
         raise HTTPException(status_code=404, detail="User not found")
+    
+
+
+

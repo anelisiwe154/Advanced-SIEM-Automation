@@ -1,4 +1,3 @@
-# /services/rule_service.py
 from code_implem.repositories.rule_repository import RuleRepository
 from code_implem.src.rule import Rule
 
@@ -13,7 +12,8 @@ class RuleService:
         existing = self.rule_repo.find_by_name(rule.name)
         if existing:
             raise DuplicateRuleException(f"Rule '{rule.name}' already exists")
-        return self.rule_repo.save(rule)
+        self.rule_repo.save(rule)
+        return rule
 
     def get_rules(self):
         return self.rule_repo.find_all()
@@ -22,3 +22,4 @@ class RuleService:
         rules = self.rule_repo.find_all()
         triggered = [r for r in rules if r.matches(alert)]
         return triggered
+

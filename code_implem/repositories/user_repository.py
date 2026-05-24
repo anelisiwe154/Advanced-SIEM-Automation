@@ -1,4 +1,3 @@
-
 from typing import Optional, List
 from .repository import Repository
 from code_implem.src.user import User
@@ -15,3 +14,10 @@ class UserRepository(Repository[User, str]):
 
     def delete(self, id: str) -> None:
         raise NotImplementedError
+
+    def find_by_name(self, name: str) -> Optional[User]:
+        raise NotImplementedError
+
+
+
+

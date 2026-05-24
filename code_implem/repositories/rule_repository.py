@@ -15,3 +15,7 @@ class RuleRepository(Repository[Rule, str]):
 
     def delete(self, id: str) -> None:
         raise NotImplementedError
+
+    def find_by_name(self, name: str) -> Optional[Rule]:
+        raise NotImplementedError
+
