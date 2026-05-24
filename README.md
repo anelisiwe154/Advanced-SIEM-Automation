@@ -134,10 +134,25 @@ This ensures traceability between UML diagrams (Assignment 9) and the Python imp
 
   - [Assignment 11 : Reflection](REFLECTION.md)
 
-  ## Assignment 11 : Service Layer and REST API Implementation
+  ## Assignment 12 : Service Layer and REST API Implementation
   - [Sprint board update.png](screenshoots)
   - [Swagger UI Screenshots](docs)
   - [CHANGELOG](CHANGELOG.md)
+
+  ## Assignment 13: Implementing CI/CD with GitHub Actions
+   - [CI Pipeline.png](screenshoots)
+  - [PROTECTION](PROTECTION.md)
+
+  ## Running Tests Locally
+```bash
+  python -m pytest --cov=code_implem --cov-report=term-missing
+```
+## How the CI/CD Pipeline Works
+- The pipeline runs automatically through GitHub Actions.
+
+- Continuous Integration (CI): On every push or pull request, the workflow sets up Python, installs dependencies, and runs all unit and integration tests. Branch protection ensures that merges into main are blocked if tests fail.
+
+- Continuous Deployment (CD): When code is merged into main, the workflow builds a Python wheel package and uploads it as an artifact. This ensures only tested and approved code is packaged and released
   
 
 
