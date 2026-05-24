@@ -140,8 +140,11 @@ This ensures traceability between UML diagrams (Assignment 9) and the Python imp
   - [CHANGELOG](CHANGELOG.md)
 
   ## Assignment 13: Implementing CI/CD with GitHub Actions
-   - [CI Pipeline.png](screenshoots)
+   -[CI Pipeline.png](screenshoots)
   - [PROTECTION](PROTECTION.md)
+   -[artifact.png](screenshoots)
+  - [workflow.png](screenshoots)
+  - Workflow file path: .github/workflows/ci.yml
 
   ## Running Tests Locally
 ```bash
