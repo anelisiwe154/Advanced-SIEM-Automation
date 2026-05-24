@@ -1,10 +1,9 @@
-import pytest
+
 from fastapi.testclient import TestClient
-from api.app import app   # absolute import
+
+from app import app
 
 client = TestClient(app)
-
-
 
 def test_get_all_incidents_empty():
     response = client.get("/api/incidents/")
@@ -14,5 +13,6 @@ def test_get_all_incidents_empty():
 def test_escalate_not_found():
     response = client.post("/api/incidents/I99/escalate")
     assert response.status_code == 404
+
 
 

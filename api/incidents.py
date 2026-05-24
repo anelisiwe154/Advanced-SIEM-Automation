@@ -1,27 +1,51 @@
+# api/incidents.py
 from fastapi import APIRouter, HTTPException
-from services.incident_service import IncidentService, IncidentNotFoundException, IncidentAlreadyEscalatedException
 from code_implem.repositories.inmemory.inmemory_incident_repository import InMemoryIncidentRepository
-from api.schemas import IncidentSchema
+from services.incident_service import IncidentService
 
 router = APIRouter(prefix="/api/incidents", tags=["Incidents"])
-incident_service = IncidentService(InMemoryIncidentRepository())
 
-@router.get("/", response_model=list[IncidentSchema])
+incident_repo = InMemoryIncidentRepository()
+incident_service = IncidentService(incident_repo)
+
+@router.get("/")
 def get_all_incidents():
-    return incident_service.incident_repo.find_all()
+    return [
+        {
+            "id": i.id,
+            "description": i.description,
+            "is_escalated": i.is_escalated,
+            "is_acknowledged": i.is_acknowledged,
+        }
+        for i in incident_service.get_incidents()
+    ]
 
-@router.post("/{incident_id}/escalate", response_model=IncidentSchema)
+@router.post("/{incident_id}/escalate")
 def escalate_incident(incident_id: str):
     try:
-        return incident_service.escalate_incident(incident_id)
-    except IncidentNotFoundException:
-        raise HTTPException(status_code=404, detail="Incident not found")
-    except IncidentAlreadyEscalatedException:
-        raise HTTPException(status_code=400, detail="Incident already escalated")
+        incident = incident_service.escalate_incident(incident_id)
+        return {
+            "id": incident.id,
+            "description": incident.description,
+            "is_escalated": incident.is_escalated,
+            "is_acknowledged": incident.is_acknowledged,
+        }
+    except Exception as e:
+        raise HTTPException(status_code=404, detail=str(e))
 
-@router.post("/{incident_id}/acknowledge", response_model=IncidentSchema)
+@router.post("/{incident_id}/acknowledge")
 def acknowledge_incident(incident_id: str):
     try:
-        return incident_service.acknowledge_incident(incident_id)
-    except IncidentNotFoundException:
-        raise HTTPException(status_code=404, detail="Incident not found")
+        incident = incident_service.acknowledge_incident(incident_id)
+        return {
+            "id": incident.id,
+            "description": incident.description,
+            "is_escalated": incident.is_escalated,
+            "is_acknowledged": incident.is_acknowledged,
+        }
+    except Exception as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+
+    
+

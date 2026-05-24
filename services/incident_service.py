@@ -21,7 +21,8 @@ class IncidentService:
             raise IncidentAlreadyEscalatedException(incident_id)
 
         incident.escalate()
-        return self.incident_repo.save(incident)
+        self.incident_repo.save(incident)
+        return incident  
 
     def acknowledge_incident(self, incident_id: str) -> Incident:
         incident = self.incident_repo.find_by_id(incident_id)
@@ -29,4 +30,11 @@ class IncidentService:
             raise IncidentNotFoundException(incident_id)
 
         incident.acknowledge()
-        return self.incident_repo.save(incident)
+        self.incident_repo.save(incident)
+        return incident   
+
+   
+    def get_incidents(self) -> list[Incident]:
+        return self.incident_repo.find_all()
+
+
