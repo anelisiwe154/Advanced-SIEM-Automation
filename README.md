@@ -156,7 +156,33 @@ This ensures traceability between UML diagrams (Assignment 9) and the Python imp
 - Continuous Integration (CI): On every push or pull request, the workflow sets up Python, installs dependencies, and runs all unit and integration tests. Branch protection ensures that merges into main are blocked if tests fail.
 
 - Continuous Deployment (CD): When code is merged into main, the workflow builds a Python wheel package and uploads it as an artifact. This ensures only tested and approved code is packaged and released
-  
+
+
+## Assignment 14:  Peer Review, Onboarding, and Open-Source Collaboration
+
+Getting Started
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/anelisiwe154/Advanced-SIEM-Automation.git
+
+install dependencies
+- pip install -r requirements.txt
+
+Run test locally 
+- pytest
+
+
+## Features for Contribution
+
+| Feature / Bug | Issue # | Label | Status |
+|---------------|---------|-------|--------|
+| Improve User deactivation error handling | #46 | bug | Open |
+| Fix Rule validation bug | #45 | bug | Open |
+| Redis caching | feature-request | Planned |
+| Role-based access control | feature-request | Planned |
+| Threat intel feeds | feature-request | Planned |
+| Documentation updates | good-first-issue | Open |
+| Minor bug fixes | good-first-issue | Open |
 
 
 
